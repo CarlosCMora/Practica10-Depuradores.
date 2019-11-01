@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Práctica10 Depuración de programas.}
+\author{\huge{\texttt{Castañeda Mora Carlos\\\texttt{
+\huge{González Bretón Arturo\\\texttt{
+\huge{Paniagua Bautista Daniel}}}}}}}
+
+\date{17 octubre 2019}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\justify
+Uno de los principales problemas al desarrollar aplicaciones son los errores de ejecución. Compilar un programa no es garantía suficiente de que funciona de la manera prevista. Es más, el ciclo de desarrollo de un programa está ocupado, en su mayoría por las tareas de diagnosticar y corregir los errores de ejecución. A los errores de ejecución en programas se les suele denominar en inglés bugs.
+
+Hoy en día, los métodos que se utilizan para “depurar” los errores de un programa son múltiples y con diferentes niveles de eficacia. El método consistente en insertar llamadas a printf que escriben en pantalla mensajes es quizás el más ineficiente de todos ellos. En realidad lo que se precisa es una herramienta que permita ejecutar de forma controlada un programa, que permita suspender la ejecución en cualquier punto para poder realizar comprobaciones, ver el contenido de las variables, etc.
+
+Esta herramienta se conoce con el nombre de depurador o, su término inglés, debugger. El depurador es un ejecutable cuya misión es permitir la ejecución controlada de un segundo ejecutable. Se comporta como un envoltorio dentro del cual se desarrolla una ejecución normal de un programa, pero a la vez permite realizar una serie de operaciones específicas para visualizar el entorno de ejecución en cualquier instante.
+
+Más concretamente, el depurador permite:
+
+ejecutar un programa línea a línea
+
+detener la ejecución temporalmente en una línea de código concreta
+
+detener temporalmente la ejecución bajo determinadas condiciones
+
+visualizar el contenido de las variables en un determinado momento de la ejecución
+
+cambiar el valor del entorno de ejecución para poder ver el efecto de una corrección en el programa
+
+Uno de los depuradores más utilizados en entornos Linux es gdb (Debugger de GNU). 
+\section{\huge{\textbf{Desarrollo}}}
+
+\paragraph{\Large{1)Código del primer programa.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_11.png}
+
+
+
+\paragraph{\Large{2)Se agregan breaks, para que cuando el progrma llegue a ese punto pare su ejecución y regrese los valores de las variables que tienen en ese momento.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_12.png}
+
+
+\paragraph{\Large{3)Código del segundo programa.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_14.png}
+
+\paragraph{\Large{4)Se le argegan break al nuevo código para compbrobar el valor de las variables.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_15.png}
+
+\paragraph{\Large{5)Para depurar el programa con gdb, comando de Linux, ongresamos a una maquina virtual creada en el servidor para cada usuario, aquí vemos como entramos al servidor.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_21.png}
+
+\paragraph{\Large{6)Adentro, compilamos el programa y ejecutamos.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_22.png}
+
+\paragraph{\Large{7)Utilizamos el comando gdb para depurar el prgorama y agregar breaks.\\}}
+\includegraphics[Width=11cm,height=6cm]{p10_23.png}
+\includegraphics[Width=11cm,height=6cm]{p10_24.png}
+
+
+
+
+\section{Conclusión}
+\justify
+El depurador es una herramienta sumamente útil, no sólo cuando el código trabaja con apuntadores, pues en muchas ocasiones se pueden presentar errores en la lógica de programación (el compilador no detecta estos errores). 
+Desafortunadamente no pudimos utilizar el gdb, ya que no funciona en MacOS, sin embargo, pudimos depurar varios programas con ayuda de XCode (un IDE propio de MacOS); considerando lo anterior, los objetivos de la práctica se cumplieron en su totalidad. Arturo
+
+
+
+Un depurador es una herramienta muy importante en la vida de un programador, ya que hay ocasiones en la que el compilador no detecta los errores, por eso al agregar puntos donde el programa se detiene y envia el valor de las variables, ayuda a detectar eficietemente los problemas en el código o la parte que no funciona. A pesar de haber probado el comando gdb con el tiempo encima, logramos entender el funcionamiento de este y su función en la correción de programas desde el terminal. Carlos.
+\section{Bibliografía}
+
+https://es.wikipedia.org/wiki/Depurador
+
+
+http://www.it.uc3m.es/pbasanta/asng/course_notes/debugger_es.html
+\end{document}
+
+
